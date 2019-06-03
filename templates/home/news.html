@@ -1,8 +1,12 @@
 <div class="col-md-6 bottom-space-10 new-box" >
     <a href="{{ site_base }}/article/detail/a/{{ article["id"] }}" >
         <div class="col-md-6 text-left nopadding" >
-            <h4>{{ article["title"] }}</h4>
+            <h4>{{ article["caption"] }}</h4>
         </div>
-        <img class="col-md-6" src="{{ article['thumb_200'] }}" />
+        {% if article['thumb_200'] is not None %}
+            <img class="col-md-6" src="{{ article['thumb_200'] }}" />
+        {% else %}
+            <img class="col-md-6" src="https://84static.loadingplay.com/static/images/200_2a3aa4b14c21ab9fee19d3b82b00614d_mala.png" />
+        {% end %}
     </a>
 </div>
